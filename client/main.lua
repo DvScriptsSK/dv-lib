@@ -9,5 +9,13 @@ TriggerServerEvent("inventory:server:OpenInventory", "stash", name, {
     end
 end
 function Teleport(ped, x, y, z)
-    SetEntityCoords(ped, x, y, z)
+    CreateThread( 
+      function()
+        DoScreenFadeOut(250)
+        while not IsScreenFadedOut() do
+          Wait(0)
+        end
+        SetEntityCoords(ped, x, y, z)
+        DoScreenFadeIn(250)
+      end)
 end

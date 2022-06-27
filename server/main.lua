@@ -36,8 +36,9 @@ function RemoveItem(source,item,amount)
           vaulue = true
          end
     elseif Config.framework == 'esx' then
-        Player.removeInventoryItem(item, amount) 
+       if Player.removeInventoryItem(item, amount) then
         vaulue = true
+       end
 end
 Wait(500)
 return(vaulue)

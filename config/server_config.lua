@@ -1,2 +1,2 @@
 Config = {}
-Config.framework = 'esx'
+Config.framework = 'qb' -- DV/QB/ESX
